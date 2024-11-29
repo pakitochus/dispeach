@@ -3,6 +3,9 @@ import numpy as np
 
 # low-pass filter
 def low_pass_filter(audio: np.ndarray, cutoff: float, order: int = 5, Fs: int = 16000) -> np.ndarray:
+    """
+    Low-pass filter the audio signal.
+    """
     nyq = 0.5 * Fs
     low = cutoff / nyq
     b, a = butter(order, [low], btype='low')

@@ -13,7 +13,7 @@ if __name__ == "__main__":
     audio_path = sys.argv[1]
 
     # load audio file
-    audio, sr = sp.io.wavfile.read(audio_path)
+    sr, audio = sp.io.wavfile.read(audio_path)
 
     # low-pass filter
     audio_lp = low_pass_filter(audio, 1000, 5, sr)
